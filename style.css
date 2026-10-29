@@ -213,3 +213,5 @@ h3 { font-size: 1.05rem; display: flex; align-items: center; gap: .6rem; margin-
 }
 @media (max-width: 820px) { .members { grid-template-columns: repeat(2, 1fr); } }
 .footer a { color: var(--lime); text-decoration: none; }
+
+.hero-meta a { color: var(--leaf); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
