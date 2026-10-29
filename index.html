@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>evgr.n coffee + lab</title>
+<meta name="description" content="evgr.n coffee + lab — a student-run coffee shop on campus.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav-logo" href="#top" aria-label="evgr.n home">evgr<span class="dot"></span>n</a>
+  <nav>
+    <a href="#about">about</a>
+    <a href="#menu">menu</a>
+    <a href="#visit">visit</a>
+    <a href="#join">join</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="logo" aria-label="evgr.n coffee + lab">
+        <span class="logo-word">evgr<span class="dot"></span>n</span>
+        <span class="logo-sub"><span>coffee</span><span>+ lab</span></span>
+      </h1>
+      <p class="tagline">student-run coffee, brewed on campus.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#visit">find us</a>
+        <a class="btn btn-ghost" href="#menu">see the menu</a>
+      </div>
+    </div>
+    <div class="mosaic" data-cols="48" data-rows="3" aria-hidden="true"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about">
+    <div class="wrap two-col">
+      <div>
+        <p class="label">// about</p>
+        <h2>coffee shop by day,<br>experiment by design.</h2>
+      </div>
+      <div class="prose">
+        <p>evgr.n is a coffee shop run entirely by students — the baristas, the buyers, the people who chose the beans and painted the menu board. We wanted a place on campus to slow down for ten minutes between classes, and we figured the best way to get one was to build it ourselves.</p>
+        <p>The <em>lab</em> part is real: we rotate roasters, test new drinks, run cuppings and latte-art nights, and treat every shift as a chance to learn how a small business actually works.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="section menu">
+    <div class="wrap">
+      <p class="label">// menu</p>
+      <h2>what's brewing</h2>
+      <div class="menu-grid">
+        <div class="menu-col">
+          <h3><span class="sq" style="--c:var(--moss)"></span>espresso</h3>
+          <ul>
+            <li><span>espresso</span><span class="price">$—</span></li>
+            <li><span>americano</span><span class="price">$—</span></li>
+            <li><span>cortado</span><span class="price">$—</span></li>
+            <li><span>cappuccino</span><span class="price">$—</span></li>
+            <li><span>latte</span><span class="price">$—</span></li>
+          </ul>
+        </div>
+        <div class="menu-col">
+          <h3><span class="sq" style="--c:var(--terracotta)"></span>slow bar</h3>
+          <ul>
+            <li><span>drip of the day</span><span class="price">$—</span></li>
+            <li><span>pour-over</span><span class="price">$—</span></li>
+            <li><span>cold brew</span><span class="price">$—</span></li>
+            <li><span>tea</span><span class="price">$—</span></li>
+          </ul>
+        </div>
+        <div class="menu-col lab-col">
+          <h3><span class="sq" style="--c:var(--apricot)"></span>from the lab</h3>
+          <p class="small">rotating experimental drinks — ask what's on this week.</p>
+          <ul>
+            <li><span>seasonal special</span><span class="price">$—</span></li>
+            <li><span>barista's choice</span><span class="price">$—</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="small note">oat, almond and whole milk available. prices coming soon.</p>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" class="section visit">
+    <div class="wrap two-col">
+      <div>
+        <p class="label">// visit</p>
+        <h2>come say hi.</h2>
+        <p class="where"><strong>Location TBD</strong><br>on campus</p>
+      </div>
+      <table class="hours" aria-label="Opening hours">
+        <tr><th>mon – thu</th><td>8:00 – 4:00</td></tr>
+        <tr><th>fri</th><td>8:00 – 2:00</td></tr>
+        <tr><th>sat – sun</th><td>closed</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section id="join" class="section join">
+    <div class="wrap">
+      <p class="label">// join the lab</p>
+      <h2>want to pull shots with us?</h2>
+      <p class="prose-narrow">We're always looking for new baristas, designers, and anyone curious about running a café. No experience needed — we'll teach you everything.</p>
+      <div class="hero-cta">
+        <a class="btn btn-dark" href="mailto:hello@example.com">get in touch</a>
+        <a class="btn btn-ghost-dark" href="#">instagram</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="mosaic" data-cols="48" data-rows="2" aria-hidden="true"></div>
+  <div class="wrap footer-inner">
+    <span class="nav-logo">evgr<span class="dot"></span>n</span>
+    <span>student-run · on campus · © <span id="yr">2026</span></span>
+  </div>
+</footer>
+
+<script>
+  // pixel-grid mosaic in the house palette
+  const palette = ['#a04d43','#e2b5a8','#e1936c','#bb9b67','#f2e7bf','#929674','#adb78e','#ecdba2','#566145','#c4df6c'];
+  document.querySelectorAll('.mosaic').forEach(el => {
+    const cols = +el.dataset.cols, rows = +el.dataset.rows;
+    el.style.setProperty('--cols', cols);
+    for (let i = 0; i < cols * rows; i++) {
+      const s = document.createElement('span');
+      s.style.background = palette[Math.floor(Math.random() * palette.length)];
+      el.appendChild(s);
+    }
+  });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
