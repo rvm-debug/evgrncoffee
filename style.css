@@ -6,8 +6,8 @@
   --moss: #4a7c1a;
   --forest: #1f211d;     /* near-black */
   --ink: #1f211d;
-  --cream: #f0eee4;      /* brand board background */
-  --paper: #faf9f4;      /* off-white */
+  --cream: #f4f4f2;      /* light neutral grey */
+  --paper: #ffffff;      /* white */
   --terracotta: #e8674a; /* coral */
   --blush: #e9a6c4;      /* pink */
   --apricot: #f2c94c;    /* yellow */
@@ -56,7 +56,7 @@ h3 { font-size: 1.05rem; display: flex; align-items: center; gap: .6rem; margin-
   position: sticky; top: 0; z-index: 10;
   display: flex; justify-content: space-between; align-items: center;
   padding: 14px 24px;
-  background: rgba(250, 249, 244, .9);
+  background: rgba(255, 255, 255, .92);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(31, 33, 29, .08);
@@ -289,4 +289,4 @@ h3 { font-size: 1.05rem; display: flex; align-items: center; gap: .6rem; margin-
 .avatar-initials { color: var(--ink); }
 .avatar-initials[style*="--sage"], .avatar-initials[style*="--moss"] { color: var(--paper); }
 
-.hero { background-color: #ffffff; }
+.hero { background-color: var(--paper); }
