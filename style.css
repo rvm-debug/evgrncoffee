@@ -70,11 +70,6 @@ h3 { font-size: 1.05rem; display: flex; align-items: center; gap: .6rem; margin-
 .hero {
   position: relative;
   background-color: var(--lime);
-  /* fine grid like the palette image */
-  background-image:
-    linear-gradient(rgba(255,255,255,.45) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.45) 1px, transparent 1px);
-  background-size: 22px 22px;
   min-height: 82vh;
   display: flex; flex-direction: column; justify-content: space-between;
 }
