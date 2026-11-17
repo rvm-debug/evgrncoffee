@@ -288,3 +288,5 @@ h3 { font-size: 1.05rem; display: flex; align-items: center; gap: .6rem; margin-
 .donate .step-n { color: var(--ink); }
 .avatar-initials { color: var(--ink); }
 .avatar-initials[style*="--sage"], .avatar-initials[style*="--moss"] { color: var(--paper); }
+
+.hero { background-color: #ffffff; }
