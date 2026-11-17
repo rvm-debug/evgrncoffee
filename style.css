@@ -290,3 +290,5 @@ h3 { font-size: 1.05rem; display: flex; align-items: center; gap: .6rem; margin-
 .avatar-initials[style*="--sage"], .avatar-initials[style*="--moss"] { color: var(--paper); }
 
 .hero { background-color: var(--paper); }
+
+.btn-donate { background: var(--leaf); border-color: var(--leaf); color: #ffffff; }
