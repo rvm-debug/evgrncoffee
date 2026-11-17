@@ -292,3 +292,5 @@ h3 { font-size: 1.05rem; display: flex; align-items: center; gap: .6rem; margin-
 .hero { background-color: var(--paper); }
 
 .btn-donate { background: var(--leaf); border-color: var(--leaf); color: #ffffff; }
+.nav nav a.nav-donate { background: var(--leaf); color: #ffffff; }
+.nav nav a.nav-donate:hover { background: var(--forest); color: #ffffff; }
