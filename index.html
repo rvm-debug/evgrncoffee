@@ -162,14 +162,20 @@
 <script>
   // pixel-grid mosaic in the house palette
   const palette = ['#4a7c1a','#7fb23a','#1f211d','#f7f2e4','#2f4fb0','#8fb4e8','#f2c94c','#e8674a','#e9a6c4'];
+  // strips: two identical halves side by side so they can scroll left forever
   document.querySelectorAll('.mosaic').forEach(el => {
     const cols = +el.dataset.cols, rows = +el.dataset.rows;
     el.style.setProperty('--cols', cols);
-    for (let i = 0; i < cols * rows; i++) {
-      const s = document.createElement('span');
-      s.style.background = palette[Math.floor(Math.random() * palette.length)];
-      el.appendChild(s);
+    const colors = Array.from({ length: cols * rows }, () => palette[Math.floor(Math.random() * palette.length)]);
+    const track = document.createElement('div');
+    track.className = 'mosaic-track';
+    for (let h = 0; h < 2; h++) {
+      const half = document.createElement('div');
+      half.className = 'mosaic-half';
+      colors.forEach(c => { const sq = document.createElement('span'); sq.style.background = c; half.appendChild(sq); });
+      track.appendChild(half);
     }
+    el.appendChild(track);
   });
   // checkered pixel frame around the logo
   (function () {
@@ -200,6 +206,13 @@
     const redraw = () => frames.forEach(draw);
     (document.fonts ? document.fonts.ready : Promise.resolve()).then(redraw);
     let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(redraw, 120); });
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setInterval(() => {
+        document.querySelectorAll('.logo-frame .px').forEach(b => {
+          b.style.background = colors[Math.floor(Math.random() * colors.length)];
+        });
+      }, 10000);
+    }
   })();
 </script>
 </body>

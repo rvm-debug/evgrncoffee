@@ -308,3 +308,15 @@ h3 { font-size: 1.05rem; display: flex; align-items: center; gap: .6rem; margin-
 .logo-frame .logo-word { font-size: clamp(3rem, 12.5vw, 8.5rem); }
 .logo-frame .logo-sub { font-size: clamp(1.05rem, 3.8vw, 2.6rem); }
 .hero .tagline { margin-top: 2.2rem; }
+
+/* ---------- moving strips ---------- */
+.mosaic { display: block; overflow: hidden; }
+.mosaic-track { display: flex; width: 200%; }
+.mosaic-half { display: grid; grid-template-columns: repeat(var(--cols, 48), 1fr); width: 50%; flex: none; }
+.mosaic-half span { aspect-ratio: 1; display: block; }
+@media (max-width: 640px) { .mosaic-half span { aspect-ratio: 1 / 2; } }
+@media (prefers-reduced-motion: no-preference) {
+  .mosaic-track { animation: strip-left 90s linear infinite; }
+  @keyframes strip-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+}
+.logo-frame .px { transition: background-color 1.2s ease; }
