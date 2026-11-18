@@ -294,3 +294,17 @@ h3 { font-size: 1.05rem; display: flex; align-items: center; gap: .6rem; margin-
 .btn-donate { background: var(--leaf); border-color: var(--leaf); color: #ffffff; }
 .nav nav a.nav-donate { background: var(--leaf); color: #ffffff; }
 .nav nav a.nav-donate:hover { background: var(--forest); color: #ffffff; }
+
+/* ---------- checkered frame around the logo ---------- */
+.logo-frame {
+  --px: clamp(9px, 1.9vw, 24px);
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: calc(var(--px) * 3.2) calc(var(--px) * 3.6);
+  max-width: 100%;
+}
+.logo-frame .px { position: absolute; display: block; }
+.logo-frame .logo { position: relative; z-index: 1; }
+.logo-frame .logo-word { font-size: clamp(3rem, 12.5vw, 8.5rem); }
+.logo-frame .logo-sub { font-size: clamp(1.05rem, 3.8vw, 2.6rem); }
+.hero .tagline { margin-top: 2.2rem; }

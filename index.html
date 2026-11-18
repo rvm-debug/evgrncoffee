@@ -29,10 +29,12 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <h1 class="logo" aria-label="evgr.n coffee + lab">
-        <span class="logo-word">evgr<span class="dot"></span>n</span>
-        <span class="logo-sub"><span>coffee</span><span>+ lab</span></span>
-      </h1>
+      <div class="logo-frame" data-frame>
+        <h1 class="logo" aria-label="evgr.n coffee + lab">
+          <span class="logo-word">evgr<span class="dot"></span>n</span>
+          <span class="logo-sub"><span>coffee</span><span>+ lab</span></span>
+        </h1>
+      </div>
       <p class="tagline">student-run coffee in the heart of evgr.</p>
       <p class="hero-meta"><span class="sq" style="--c:var(--leaf)"></span>EVGR C &nbsp;·&nbsp; hours TBD &nbsp;·&nbsp; <a href="https://www.instagram.com/evgrncoffee/" target="_blank" rel="noopener">@evgrncoffee</a></p>
       <div class="hero-cta">
@@ -159,6 +161,36 @@
       el.appendChild(s);
     }
   });
+  // checkered pixel frame around the logo
+  (function () {
+    const colors = ['#4a7c1a','#7fb23a','#1f211d','#2f4fb0','#8fb4e8','#f2c94c','#e8674a','#e9a6c4'];
+    const seed = Math.floor(Math.random() * 1e9);
+    function rng(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+    function draw(el) {
+      el.querySelectorAll('.px').forEach(n => n.remove());
+      el.style.width = ''; el.style.height = '';
+      const probe = document.createElement('span');
+      probe.style.cssText = 'position:absolute;visibility:hidden;width:var(--px)';
+      el.appendChild(probe); const px = probe.getBoundingClientRect().width || 20; probe.remove();
+      const cols = Math.ceil(el.offsetWidth / px), rows = Math.ceil(el.offsetHeight / px);
+      el.style.width = cols * px + 'px'; el.style.height = rows * px + 'px';
+      const r = rng(seed), frag = document.createDocumentFragment();
+      for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++) {
+        const ring = Math.min(x, y, cols - 1 - x, rows - 1 - y);
+        const roll = r(), pick = colors[Math.floor(r() * colors.length)];
+        if (ring > 1 || (ring === 1 && roll > 0.4)) continue;
+        const b = document.createElement('span');
+        b.className = 'px';
+        b.style.cssText = `left:${x * px}px;top:${y * px}px;width:${px}px;height:${px}px;background:${pick}`;
+        frag.appendChild(b);
+      }
+      el.appendChild(frag);
+    }
+    const frames = document.querySelectorAll('[data-frame]');
+    const redraw = () => frames.forEach(draw);
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(redraw);
+    let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(redraw, 120); });
+  })();
 </script>
 </body>
 </html>
