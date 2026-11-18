@@ -316,7 +316,7 @@ h3 { font-size: 1.05rem; display: flex; align-items: center; gap: .6rem; margin-
 .mosaic-half span { aspect-ratio: 1; display: block; }
 @media (max-width: 640px) { .mosaic-half span { aspect-ratio: 1 / 2; } }
 @media (prefers-reduced-motion: no-preference) {
-  .mosaic-track { animation: strip-left 90s linear infinite; }
+  .mosaic-track { animation: strip-left 180s linear infinite; }
   @keyframes strip-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 }
 .logo-frame .px { transition: background-color .8s ease; }
