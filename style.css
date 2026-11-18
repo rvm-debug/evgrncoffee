@@ -14,7 +14,7 @@
   --sand: #8fb4e8;       /* light blue */
   --sage: #2f4fb0;       /* blue */
 
-  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
   --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
 }
 
@@ -320,3 +320,6 @@ h3 { font-size: 1.05rem; display: flex; align-items: center; gap: .6rem; margin-
   @keyframes strip-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 }
 .logo-frame .px { transition: background-color 1.2s ease; }
+
+/* logo weight to match the brand board */
+.logo-word, .nav-logo { font-weight: 500; }
