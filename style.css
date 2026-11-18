@@ -319,7 +319,7 @@ h3 { font-size: 1.05rem; display: flex; align-items: center; gap: .6rem; margin-
   .mosaic-track { animation: strip-left 90s linear infinite; }
   @keyframes strip-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 }
-.logo-frame .px { transition: background-color 1.2s ease; }
+.logo-frame .px { transition: background-color .8s ease; }
 
 /* logo weight to match the brand board */
 .logo-word, .nav-logo { font-weight: 500; }
